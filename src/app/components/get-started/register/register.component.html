@@ -1,0 +1,83 @@
+<div class="container bg-white border border-dark rounded text-center text-dark">
+    <h3 class="border-bottom border-dark p-3 font-weight-bold">
+        Register
+    </h3>
+    <div class="p-3 mb-3" *ngIf="view === 'register'">
+        <form [formGroup]="model" (ngSubmit)="submit()">
+            <div>
+                <input type="text" id="name" name="name" placeholder="Name" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && model.get('name')?.errors }">
+            </div>
+            <div *ngIf="submitted && model.get('name')?.errors?.required" class="text-left text-danger small">
+                Name is required
+            </div>
+
+            <div class="mt-3">
+                <input type="text" id="email" name="email" placeholder="Email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && model.get('email')?.errors }">
+            </div>
+            <div *ngIf="submitted && model.get('email')?.errors?.required" class="text-left text-danger small">
+                Email is required
+            </div>
+            <div *ngIf="submitted && model.get('email')?.errors?.email" class="text-left text-danger small">
+                Enter a valid email address, e.g. john@example.com
+            </div>
+
+
+            <div class="mt-3">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && model.get('password')?.errors }">
+            </div>
+            <div *ngIf="submitted && model.get('password')?.errors?.required" class="text-left text-danger small">
+                Password is required
+            </div>
+            <div *ngIf="submitted && model.get('password')?.errors?.minlength" class="text-left text-danger small">
+                Password must be at least 8 characters
+            </div>
+
+            <div class="mt-3">
+                <input type="password" id="pconfirm" name="pconfirm" placeholder="Confirm Password" class="form-control" formControlName="pconfirm" [ngClass]="{ 'is-invalid': submitted && model.get('pconfirm')?.errors }">
+            </div>
+            <div *ngIf="submitted && model.get('pconfirm')?.errors?.required" class="text-left text-danger small">
+                Confirm Password is required
+            </div>
+            <div *ngIf="submitted && model.get('pconfirm')?.errors?.ConfirmPassword" class="text-left text-danger small">
+                Passwords must match
+            </div>
+
+            <!-- <div class="mt-3">
+                <input type="phone" id="phone" name="phone" placeholder="Phone" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && model.get('phone')?.errors }">
+            </div>
+            <div *ngIf="submitted && model.get('phone')?.errors" class="text-left text-danger small">
+                Enter a valid 10 digit phone number
+            </div>
+
+            <div class="mt-3">
+                <input type="profession" id="profession" name="profession" placeholder="Profession" class="form-control" formControlName="profession">
+            </div>
+
+            <div class="mt-3">
+                <input type="photoUrl" id="photoUrl" name="photoUrl" placeholder="Profile Photo URL" class="form-control" formControlName="photoUrl">
+            </div>
+
+            <div class="mt-3">
+                <input type="interests" id="interests" name="interests" placeholder="Interests" class="form-control" formControlName="interests">
+            </div> -->
+
+            <div class="mt-3 text-right">
+                <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <button class="btn btn-outline-dark mr-3" routerLink="/">Cancel</button>
+                </a>
+                <button type="submit" class="btn btn-dark">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="p-3 mb-3" *ngIf="view === 'success'">
+        <div class="text-left">
+            Registration successful!
+        </div>
+        <div class="text-right">
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <button class="btn btn-outline-dark mt-3" routerLink="/get-started/login">Login</button>
+            </a>
+        </div>
+    </div>
+</div>

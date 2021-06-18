@@ -1,0 +1,17 @@
+<div class="d-flex flex-nowrap">
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="btn btn-outline-dark mt-3 mr-3" routerLink="/home/cart">Cart</button>
+    </a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="btn btn-outline-dark mt-3 mr-3" routerLink="/home/order">Order</button>
+    </a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="btn btn-outline-dark mt-3 mr-3" routerLink="/home/profile">Profile</button>
+    </a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="btn btn-outline-dark mt-3 mr-3" routerLink="/home/settings">Settings</button>
+    </a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="btn btn-outline-dark mt-3 mr-4" (click)="logout()">Logout</button>
+    </a>
+</div>

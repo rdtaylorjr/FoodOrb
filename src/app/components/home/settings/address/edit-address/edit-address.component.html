@@ -1,0 +1,42 @@
+<div class="p-3 mb-3">
+    <form [formGroup]="model" (ngSubmit)="submit()">
+        <div>
+            <input type="text" id="address" name="address" placeholder="Address" class="form-control" formControlName="address" [ngClass]="{ 'is-invalid': submitted && model.get('address')?.errors }">
+        </div>
+        <div *ngIf="submitted && model.get('address')?.errors?.required" class="text-danger text-left small">
+            Address is required
+        </div>
+
+        <div class="mt-3">
+            <input type="text" id="city" name="city" placeholder="City" class="form-control" formControlName="city" [ngClass]="{ 'is-invalid': submitted && model.get('city')?.errors }">
+        </div>
+        <div *ngIf="submitted && model.get('city')?.errors?.required" class="text-danger text-left small">
+            City is required
+        </div>
+
+        <div class="mt-3">
+            <input type="text" id="state" name="state" placeholder="State" class="form-control" formControlName="state" [ngClass]="{ 'is-invalid': submitted && model.get('state')?.errors }">
+        </div>
+        <div *ngIf="submitted && model.get('state')?.errors?.required" class="text-danger text-left small">
+            State is required
+        </div>
+        <div *ngIf="submitted && model.get('state')?.errors?.pattern" class="text-danger text-left small">
+            Enter a valid state abbreviation, e.g. NY
+        </div>
+
+        <div class="mt-3">
+            <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" formControlName="zip" [ngClass]="{ 'is-invalid': submitted && model.get('zip')?.errors }">
+        </div>
+        <div *ngIf="submitted && model.get('zip')?.errors?.required" class="text-danger text-left small">
+            Zip is required
+        </div>
+        <div *ngIf="submitted && model.get('zip')?.errors?.pattern" class="text-danger text-left small">
+            Enter a valid zip code, e.g. 90210
+        </div>
+
+        <div class="mt-3 text-right">
+            <button class="btn btn-outline-dark mr-3" (click)="cancel()">Cancel</button>
+            <button type="submit" class="btn btn-dark">Edit Address</button>
+        </div>
+    </form>
+</div>

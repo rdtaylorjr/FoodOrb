@@ -1,0 +1,66 @@
+<div class="container bg-white border border-dark rounded text-center text-dark">
+    <h3 class="border-bottom border-dark p-3 font-weight-bold">
+        Order Details
+    </h3>
+    <div class="p-3 mb-3" *ngIf="view === 'placed'">
+        <div class="text-left" *ngFor="let order of orders">
+            <div class="mb-3">
+                Your food is being prepared! Sit back and relax while our partners deliver hot and yummy food to your doorstep!
+            </div>
+            <div class="mb-3">
+                Order ID: {{ order.id }}
+            </div>
+            <div class="mb-3">
+                Status: {{ order.status }}
+            </div>
+            <div class="mb-3">
+                Remaining Time: {{ order.remainingTime }}
+                <br />
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-dark mr-3" (click)="cancelOrder()">Cancel Order</button>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <button class="btn btn-outline-dark" routerLink="/home/search">Home</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="p-3 mb-3" *ngIf="view === 'delivered'">
+        <div class="text-left" *ngFor="let order of orders">
+            <div class="mb-3">
+                Order ID: {{ order.id }}
+            </div>
+            <div class="mb-3">
+                Status: {{ order.status }}
+            </div>
+        </div>
+        <div class="text-right">
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <button class="btn btn-outline-dark" routerLink="/home/search">Home</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="p-3 mb-3" *ngIf="view === 'cancelled'">
+        <div class="text-left">
+            Your order has been cancelled.
+        </div>
+        <div class="text-right">
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <button class="btn btn-outline-dark" (routerLink="/home/search")>Home</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="p-3 mb-3" *ngIf="view === 'none'">
+        <div class="text-left mb-3">
+            You have not yet placed an order.
+        </div>
+        <div class="text-right">
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <button class="btn btn-outline-dark" routerLink="/home/search">Choose Food Items</button>
+            </a>
+        </div>
+    </div>
+</div>

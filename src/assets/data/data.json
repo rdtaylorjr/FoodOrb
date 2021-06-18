@@ -1,0 +1,179 @@
+{
+  "address": [
+    {
+      "id": 1,
+      "userId": 1,
+      "address": "5436 S Simms Way",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": 80127
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "address": "11513 W San Juan Range Rd",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": 80127
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "address": "7826 W Walker Dr",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": 80127
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "address": "7284 W Hoover Ave",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": 80127
+    }
+  ],
+  "payment": [
+    {
+      "id": 1,
+      "userId": 1,
+      "paymentType": "Visa",
+      "cardNumber": "2222333344445555",
+      "expirationDate": "05/01",
+      "cvv": 209
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "paymentType": "Mastercard",
+      "cardNumber": "6666777788889999",
+      "expirationDate": "06/22",
+      "cvv": 324
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "paymentType": "Discover",
+      "cardNumber": "0000111122223333",
+      "expirationDate": "03/25",
+      "cvv": 422
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "paymentType": "American Express",
+      "cardNumber": "7373737373737373",
+      "expirationDate": "03/34",
+      "cvv": "344"
+    }
+  ],
+  "item": [
+    {
+      "id": 1,
+      "name": "Spicy Chick'n Lasagna",
+      "description": "Hearty homemade lasagna made with Boca Spicy Chick'n Patties, cashew rocatta, and fresh spinach",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, Italian",
+      "rating": 4.5,
+      "price": 12.99,
+      "photoUrl": "https://www.jessicagavin.com/wp-content/uploads/2017/07/meat-lasagna-1200.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Tofurkey Roast",
+      "description": "Savory Tofurkey roast with brown rice stuffing, gravy, and mashed sweet potatoes",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, American",
+      "rating": 5,
+      "price": 15.99,
+      "photoUrl": "https://media.newyorker.com/photos/5a1451c2fbb6a62c46d36700/2:2/w_3472,h_3472,c_limit/Kauffman-Tofurky.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Impossible Burger",
+      "description": "Juicy Impossible beef patty with Follow Your Heart cheddar cheese, lettuce, tomatoes, and barbeque sauce",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, American",
+      "rating": 4.9,
+      "price": 13.99,
+      "photoUrl": "https://gimmedelicious.com/wp-content/uploads/2020/09/Air-Fryer-Cheeseburgers-sq-2.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Food 1",
+      "description": "Hearty homemade lasagna made with Boca Spicy Chick'n Patties, cashew rocatta, and fresh spinach",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, Italian",
+      "rating": 4.5,
+      "price": 12.99,
+      "photoUrl": "https://www.noracooks.com/wp-content/uploads/2020/07/sq.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Food 2",
+      "description": "Savory Tofurkey roast with brown rice stuffing, gravy, and mashed sweet potatoes",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, American",
+      "rating": 5,
+      "price": 15.99,
+      "photoUrl": "https://media.newyorker.com/photos/5a1451c2fbb6a62c46d36700/2:2/w_3472,h_3472,c_limit/Kauffman-Tofurky.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Food 3",
+      "description": "Juicy Impossible beef patty with Follow Your Heart cheddar cheese, lettuce, tomatoes, and barbeque sauce",
+      "restaurant": "Catherine's Vegan Kitchen",
+      "category": "Vegan, American",
+      "rating": 4.9,
+      "price": 13.99,
+      "photoUrl": "https://gimmedelicious.com/wp-content/uploads/2020/09/Air-Fryer-Cheeseburgers-sq-2.jpg"
+    }
+  ],
+  "order": [
+    {
+      "id": 1
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Michael Jackson",
+      "email": "michael@jackson.com",
+      "password": "abc123",
+      "phone": 5551231234,
+      "profession": "Rock Star",
+      "photoUrl": "http://starsunfolded.com/wp-content/uploads/2016/07/Michael-Jackson.jpg",
+      "interests": [
+        "Singing",
+        " Dancing",
+        " Billie Jean"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bruce Lee",
+      "email": "bruce@lee.com",
+      "password": "jeetkunedo",
+      "phone": 5554321321,
+      "profession": "Jeet Kune Do Master",
+      "photoUrl": "https://pbs.twimg.com/profile_images/534863086276988928/bX3juDCC_400x400.jpeg",
+      "interests": [
+        "Fighting",
+        " Acting",
+        " Pushups"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Rusty Taylor",
+      "email": "rusty.taylor@email.com",
+      "password": "12345678",
+      "phone": "1234567890",
+      "profession": "Software Engineer",
+      "photoUrl": "",
+      "interests": [
+        "Angular"
+      ]
+    }
+  ]
+}

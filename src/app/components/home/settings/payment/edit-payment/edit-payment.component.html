@@ -1,0 +1,49 @@
+<div class="p-3 mb-3">
+    <form [formGroup]="model" (ngSubmit)="submit()">
+    <div>
+        <select id="paymentType" name="paymentType" class="form-control" formControlName="paymentType" [ngClass]="{ 'is-invalid': submitted && model.get('paymentType')?.errors }">
+            <option>Visa</option>
+            <option>Mastercard</option>
+            <option>American Express</option>
+            <option>Discover</option>
+        </select>
+    </div>
+    <div *ngIf="submitted && model.get('paymentType')?.errors?.required" class="text-danger text-left small">
+        Payment Type is required
+    </div>
+
+    <div class="mt-3">
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Card Number" class="form-control" formControlName="cardNumber" [ngClass]="{ 'is-invalid': submitted && model.get('cardNumber')?.errors }">
+    </div>
+    <div *ngIf="submitted && model.get('cardNumber')?.errors?.required" class="text-danger text-left small">
+        Card Number is required
+    </div>
+    <div *ngIf="submitted && model.get('cardNumber')?.errors?.pattern" class="text-danger text-left small">
+        Enter a sixteen digit number
+    </div>
+
+    <div class="mt-3">
+        <input type="text" id="expirationDate" name="expirationDate" placeholder="Expiration Date" class="form-control" formControlName="expirationDate" [ngClass]="{ 'is-invalid': submitted && model.get('expirationDate')?.errors }">
+    </div>
+    <div *ngIf="submitted && model.get('expirationDate')?.errors?.required" class="text-danger text-left small">
+        Expiration Date is required
+    </div>
+    <div *ngIf="submitted && model.get('expirationDate')?.errors?.pattern" class="text-danger text-left small">
+        Enter month and year, e.g. 01/12
+    </div>
+
+    <div class="mt-3">
+        <input type="text" id="cvv" name="cvv" class="form-control" placeholder="CVV Security Code" formControlName="cvv" [ngClass]="{ 'is-invalid': submitted && model.get('cvv')?.errors }">
+    </div>
+    <div *ngIf="submitted && model.get('cvv')?.errors?.required" class="text-danger text-left small">
+        CVV is required
+    </div>
+    <div *ngIf="submitted && model.get('cvv')?.errors?.pattern" class="text-danger text-left small">
+        Enter a three digit number
+    </div>
+    <div class="mt-3 text-right">
+        <button class="btn btn-outline-dark mr-3" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-dark">Edit Payment Method</button>
+    </div>
+    </form>
+</div>

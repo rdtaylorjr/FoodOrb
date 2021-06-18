@@ -1,0 +1,33 @@
+<div class="container bg-white border border-dark rounded text-center text-dark">
+    <h3 class="border-bottom border-dark p-3 font-weight-bold">
+        Profile
+    </h3>
+    <div class="row p-3 mb-3">
+        <div class="col-3">
+            <div class="mb-3">
+                <img class="img-fluid" *ngIf="user.photoUrl" src="{{ user.photoUrl }}">
+                <img class="img-fluid" *ngIf="!user.photoUrl" src="https://i1.wp.com/www.thingsanalytic.com/wp-content/uploads/2018/01/blank-profile.png?ssl=1">
+                <div class="mb-3">
+                    User ID: {{ user.id }}
+                </div>
+            </div>
+        </div>
+        <div class="col text-left">
+            <div class="mb-3">
+                Name: {{ user.name }}
+            </div>
+            <div class="mb-3">
+                Email: {{ user.email }}
+            </div>
+            <div class="mb-3">
+                Phone: {{ user.phone }}
+            </div>
+            <div class="mb-3">
+                Profession: {{ user.profession }}
+            </div>
+            <div class="mb-3">
+                Interests: {{ user.interests }}
+            </div>
+        </div>
+    </div>
+</div>

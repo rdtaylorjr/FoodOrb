@@ -1,0 +1,37 @@
+<div class="container bg-white border border-dark rounded text-center text-dark">
+    <h3 class="border-bottom border-dark p-3 font-weight-bold">
+        Update Addresses
+    </h3>
+    <div class="p-3 mb-3"  *ngIf="view === 'address'">
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let address of addresses" class="border-top">
+                    <td>{{ address.address }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.state }}</td>
+                    <td>{{ address.zip }}</td>
+                    <td class="text-right">
+                        <button class="btn btn-outline-dark mr-2" (click)="edit(address)">Edit</button>
+                        <button class="btn btn-outline-danger" (click)="delete(address)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="mt-3 text-right">
+            <button class="btn btn-outline-dark" (click)="add()">Add Address</button>
+        </div>
+    </div>
+
+    <app-add-address *ngIf="view === 'add'" (submitEvent)="submit()" (cancelEvent)="cancel()"></app-add-address>
+    <app-edit-address *ngIf="view === 'edit'" (submitEvent)="submit()" (cancelEvent)="cancel()" [selectedAddress]="selectedAddress"></app-edit-address>
+    <app-delete-address *ngIf="view === 'delete'" (submitEvent)="submit()" (cancelEvent)="cancel()" [selectedAddress]="selectedAddress"></app-delete-address>
+</div>
